@@ -1,5 +1,7 @@
 FROM news-board-base
 
+
 COPY . .
 
-CMD [ "python", "test_file.py" ]
+
+CMD [ "nameko", "run", "--config", "config.yml", "service" ]

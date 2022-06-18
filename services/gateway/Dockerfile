@@ -2,4 +2,6 @@ FROM news-board-base
 
 COPY . .
 
-CMD [ "python", "test_gateway.py" ]
+EXPOSE 8000
+
+CMD [ "nameko", "run", "--config", "config.yml", "service" ]

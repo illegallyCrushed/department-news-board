@@ -1,22 +1,57 @@
 version: '3'
 services:
+  rabbitmq:
+    container_name: news-board-rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+    restart: always
+
+  mysql:
+    container_name: news-board-mysql
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+
+  redis:
+    container_name: news-board-redis
+    image: redis:5
+    restart: always
+    ports:
+      - "6379:6379"
+
   gateway:
     container_name: news-board-services-gateway
     image: news-board-gateway
+    depends_on:
+      - rabbitmq
+      - mysql
+      - redis
     ports:
-      - "8080:8080"
+      - "80:8000"
     restart: always
+    environment:
+      - RABBIT_HOST=rabbitmq
 
   file:
     container_name: news-board-services-file
     image: news-board-file
-    ports:
-      - "8081:8080"
+    depends_on:
+      - rabbitmq
+      - mysql
     restart: always
+    environment:
+      - RABBIT_HOST=rabbitmq
 
   search:
     container_name: news-board-services-search
     image: news-board-search
-    ports:
-      - "8082:8080"
+    depends_on:
+      - rabbitmq
+      - mysql
     restart: always
+    environment:
+      - RABBIT_HOST=rabbitmq

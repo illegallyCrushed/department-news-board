@@ -1,0 +1,22 @@
+version: '3'
+services:
+  gateway:
+    container_name: news-board-services-gateway
+    image: news-board-gateway
+    ports:
+      - "8080:8080"
+    restart: always
+
+  file:
+    container_name: news-board-services-file
+    image: news-board-file
+    ports:
+      - "8081:8080"
+    restart: always
+
+  search:
+    container_name: news-board-services-search
+    image: news-board-search
+    ports:
+      - "8082:8080"
+    restart: always

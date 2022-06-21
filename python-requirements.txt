@@ -1,3 +1,4 @@
 nameko
 redis
 mysql-connector-python
+pyjwt

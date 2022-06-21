@@ -24,8 +24,10 @@ services:
       - "6379:6379"
 
   gateway:
-    container_name: news-board-services-gateway
+    container_name: news-board-service-gateway
     image: news-board-gateway
+    volumes:
+      - ./services/gateway:/app
     depends_on:
       - rabbitmq
       - mysql
@@ -35,23 +37,45 @@ services:
     restart: always
     environment:
       - RABBIT_HOST=rabbitmq
+      - DB_HOST=mysql
+      - REDIS_HOST=redis
 
   file:
-    container_name: news-board-services-file
+    container_name: news-board-service-file
     image: news-board-file
+    volumes:
+      - ./files:/files
+      - ./services/file:/app
     depends_on:
       - rabbitmq
       - mysql
     restart: always
     environment:
       - RABBIT_HOST=rabbitmq
+      - DB_HOST=mysql
 
-  search:
-    container_name: news-board-services-search
-    image: news-board-search
+  news:
+    container_name: news-board-service-news
+    image: news-board-news
+    volumes:
+      - ./services/news:/app
     depends_on:
       - rabbitmq
       - mysql
     restart: always
     environment:
       - RABBIT_HOST=rabbitmq
+      - DB_HOST=mysql
+
+  user:
+    container_name: news-board-service-user
+    image: news-board-user
+    volumes:
+      - ./services/news:/app
+    depends_on:
+      - rabbitmq
+      - mysql
+    restart: always
+    environment:
+      - RABBIT_HOST=rabbitmq
+      - DB_HOST=mysql

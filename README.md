@@ -1,3 +1,44 @@
+# Department News Board
+### Nicholas SV - C14190034
+
+### In the root folder
+Build all docker images:
+```bash
+make build
+```
+this will build all the images required and initiate the database
+
+Run all docker containers:
+```bash
+docker-compose up
+```
+### Cron jobs
+- Archiving news that one month old everyday
+- Backing up sql everyday
+
+cron-backup
+```bash
+0 0 * * * python3 /cron_script.py > /backups/log.txt
+```
+cron_script.py
+```python
+import os
+import time
+import datetime
+import mysql.connector
+
+connection = mysql.connector.connect(host=os.environ.get('DB_HOST', 'localhost'), user=os.environ.get('DB_USER', 'root'), password=os.environ.get('DB_PASS', ''), database=os.environ.get('DB_NAME'))
+cursor = connection.cursor()
+cursor.execute('UPDATE news SET archived = 1 WHERE datetime < NOW() - INTERVAL 1 MONTH')
+cursor.close()
+print("Cron: Archived news older than 1 month")
+
+DATETIME = time.strftime('%m%d%Y-%H%M%S')
+TODAYBACKUPPATH = "/backups/" + DATETIME
+os.system(f"mysqldump --host {os.environ.get('DB_HOST', 'localhost')} -P {os.environ.get('DB_PORT', 3306)} -u {os.environ.get('DB_USER', 'root')} -p{os.environ.get('DB_PASS', '')} {os.environ.get('DB_NAME')} > {TODAYBACKUPPATH}.sql")
+print("Cron: Backup database complete, file: " + TODAYBACKUPPATH + ".sql")
+```
+
 # User Service
 
 ## Request: Register

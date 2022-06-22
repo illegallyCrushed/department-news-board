@@ -71,6 +71,7 @@
 ```
 
 <br>
+
 ## Request: Login
 ![POST](https://badgen.net/badge/Method/POST/yellow)<span style="padding:10px">**/login**</span>
 
@@ -152,6 +153,7 @@
 ```
 
 <br>
+
 ## Request: Logout
 ![DELETE](https://badgen.net/badge/Method/DELETE/red)<span style="padding:10px">**/logout**</span>
 
@@ -168,6 +170,7 @@
 ```
 
 <br>
+
 
 # News Service
 
@@ -198,6 +201,7 @@
 ```
 
 <br>
+
 ## Request: Get News
 ![GET](https://badgen.net/badge/Method/GET/green)<span style="padding:10px">**/news/`<int:news_id>`**</span>
 
@@ -231,6 +235,7 @@
 ```
 
 <br>
+
 ## Request: Post a New News
 ![POST](https://badgen.net/badge/Method/POST/yellow)<span style="padding:10px">**/news/post**</span>
 
@@ -315,6 +320,7 @@
 ```
 
 <br>
+
 ## Request: Edit News
 ![PUT](https://badgen.net/badge/Method/PUT/blue)<span style="padding:10px">**/news/`<int:news_id>`**</span>
 
@@ -434,6 +440,7 @@
 ```
 
 <br>
+
 ## Request: Delete News
 ![DELETE](https://badgen.net/badge/Method/DELETE/red)<span style="padding:10px">**/news/`<int:news_id>`**</span>
 
@@ -478,6 +485,7 @@
 
 <br>
 
+
 # File Service
 
 ## Request: Get File
@@ -512,4 +520,5 @@
 ```
 
 <br>
+
 

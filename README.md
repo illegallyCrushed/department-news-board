@@ -1,7 +1,7 @@
 # User Service
 
 ## Request: Register
-![POST](https://badgen.net/badge/Method/POST/yellow)<span style="padding:10px">**/register**</span>
+![POST]('https://badgen.net/badge/Method/POST/yellow')<span style="padding:10px">**/register**</span>
 
 ```json
 {
@@ -12,7 +12,7 @@
 
 ### Responses:
 #### Register - Successful
-![CREATED](https://badgen.net/badge/CREATED/201/green)
+![CREATED]('https://badgen.net/badge/CREATED/201/green')
 ```json
 {
     "action": "register",
@@ -23,7 +23,7 @@
 }
 ```
 #### Register - Already Registered
-![OK](https://badgen.net/badge/OK/200/green)
+![OK]('https://badgen.net/badge/OK/200/green')
 ```json
 {
     "action": "register",
@@ -33,7 +33,7 @@
 }
 ```
 #### Register - Already Logged In
-![OK](https://badgen.net/badge/OK/200/green)
+![OK]('https://badgen.net/badge/OK/200/green')
 ```json
 {
     "action": "register",
@@ -43,7 +43,7 @@
 }
 ```
 #### Register - Bad Request (Incomplete)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "register",
@@ -52,7 +52,7 @@
 }
 ```
 #### Register - Bad Request (Wrong Type)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "register",
@@ -61,7 +61,7 @@
 }
 ```
 #### Register - Bad Request (Non JSON)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "register",
@@ -72,7 +72,7 @@
 
 <br>
 ## Request: Login
-![POST](https://badgen.net/badge/Method/POST/yellow)<span style="padding:10px">**/login**</span>
+![POST]('https://badgen.net/badge/Method/POST/yellow')<span style="padding:10px">**/login**</span>
 
 ```json
 {
@@ -83,7 +83,7 @@
 
 ### Responses:
 #### Login - Successful
-![OK](https://badgen.net/badge/OK/200/green)
+![OK]('https://badgen.net/badge/OK/200/green')
 ```json
 {
     "action": "login",
@@ -94,7 +94,7 @@
 }
 ```
 #### Login - Already Logged In
-![OK](https://badgen.net/badge/OK/200/green)
+![OK]('https://badgen.net/badge/OK/200/green')
 ```json
 {
     "action": "login",
@@ -104,7 +104,7 @@
 }
 ```
 #### Login - Username Not Exist
-![OK](https://badgen.net/badge/OK/200/green)
+![OK]('https://badgen.net/badge/OK/200/green')
 ```json
 {
     "action": "login",
@@ -114,7 +114,7 @@
 }
 ```
 #### Login - Wrong Password
-![OK](https://badgen.net/badge/OK/200/green)
+![OK]('https://badgen.net/badge/OK/200/green')
 ```json
 {
     "action": "login",
@@ -124,7 +124,7 @@
 }
 ```
 #### Login - Bad Request (Incomplete)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "login",
@@ -133,7 +133,7 @@
 }
 ```
 #### Login - Bad Request (Wrong Type)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "login",
@@ -142,7 +142,7 @@
 }
 ```
 #### Login - Bad Request (Non JSON)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "login",
@@ -153,12 +153,12 @@
 
 <br>
 ## Request: Logout
-![DELETE](https://badgen.net/badge/Method/DELETE/red)<span style="padding:10px">**/logout**</span>
+![DELETE]('https://badgen.net/badge/Method/DELETE/red')<span style="padding:10px">**/logout**</span>
 
 
 ### Responses:
 #### Logout - Successful
-![OK](https://badgen.net/badge/OK/200/green)
+![OK]('https://badgen.net/badge/OK/200/green')
 ```json
 {
     "action": "logout",
@@ -172,12 +172,12 @@
 # News Service
 
 ## Request: Get All News
-![GET](https://badgen.net/badge/Method/GET/green)<span style="padding:10px">**/news**</span>
+![GET]('https://badgen.net/badge/Method/GET/green')<span style="padding:10px">**/news**</span>
 
 
 ### Responses:
 #### Get All News - Successful
-![OK](https://badgen.net/badge/OK/200/green)
+![OK]('https://badgen.net/badge/OK/200/green')
 ```json
 {
     "action": "get_all_news",
@@ -199,12 +199,12 @@
 
 <br>
 ## Request: Get News
-![GET](https://badgen.net/badge/Method/GET/green)<span style="padding:10px">**/news/`<int:news_id>`**</span>
+![GET]('https://badgen.net/badge/Method/GET/green')<span style="padding:10px">**/news/`<int:news_id>`**</span>
 
 
 ### Responses:
 #### Get News - Successful
-![OK](https://badgen.net/badge/OK/200/green)
+![OK]('https://badgen.net/badge/OK/200/green')
 ```json
 {
     "action": "get_news_by_id",
@@ -221,7 +221,7 @@
 }
 ```
 #### Get News - News ID Not Exist
-![NOT FOUND](https://badgen.net/badge/NOT FOUND/404/red)
+![NOT FOUND]('https://badgen.net/badge/NOT FOUND/404/red')
 ```json
 {
     "action": "get_news_by_id",
@@ -232,7 +232,7 @@
 
 <br>
 ## Request: Post a New News
-![POST](https://badgen.net/badge/Method/POST/yellow)<span style="padding:10px">**/news/post**</span>
+![POST]('https://badgen.net/badge/Method/POST/yellow')<span style="padding:10px">**/news/post**</span>
 
 ```json
 {
@@ -250,7 +250,7 @@
 
 ### Responses:
 #### Post a New News - Successful
-![CREATED](https://badgen.net/badge/CREATED/201/green)
+![CREATED]('https://badgen.net/badge/CREATED/201/green')
 ```json
 {
     "action": "post_new_news",
@@ -260,7 +260,7 @@
 }
 ```
 #### Post a New News - Not Logged In
-![UNAUTHORIZED](https://badgen.net/badge/UNAUTHORIZED/401/red)
+![UNAUTHORIZED]('https://badgen.net/badge/UNAUTHORIZED/401/red')
 ```json
 {
     "action": "post_new_news",
@@ -269,7 +269,7 @@
 }
 ```
 #### Post a New News - Bad Request (Incomplete, Main)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "post_new_news",
@@ -278,7 +278,7 @@
 }
 ```
 #### Post a New News - Bad Request (Incomplete, Files)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "post_new_news",
@@ -287,7 +287,7 @@
 }
 ```
 #### Post a New News - Bad Request (Wrong Type, Main)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "post_new_news",
@@ -296,7 +296,7 @@
 }
 ```
 #### Post a New News - Bad Request (Wrong Type, Files)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "post_new_news",
@@ -305,7 +305,7 @@
 }
 ```
 #### Post a New News - Bad Request (Non JSON)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "post_new_news",
@@ -316,7 +316,7 @@
 
 <br>
 ## Request: Edit News
-![PUT](https://badgen.net/badge/Method/PUT/blue)<span style="padding:10px">**/news/`<int:news_id>`**</span>
+![PUT]('https://badgen.net/badge/Method/PUT/blue')<span style="padding:10px">**/news/`<int:news_id>`**</span>
 
 ```json
 {
@@ -334,7 +334,7 @@
 
 ### Responses:
 #### Edit News - Successful (All)
-![OK](https://badgen.net/badge/OK/200/green)
+![OK]('https://badgen.net/badge/OK/200/green')
 ```json
 {
     "action": "edit_news",
@@ -343,7 +343,7 @@
 }
 ```
 #### Edit News - Successful (Partial)
-![OK](https://badgen.net/badge/OK/200/green)
+![OK]('https://badgen.net/badge/OK/200/green')
 ```json
 {
     "action": "edit_news",
@@ -352,7 +352,7 @@
 }
 ```
 #### Edit News - Not Logged In
-![UNAUTHORIZED](https://badgen.net/badge/UNAUTHORIZED/401/red)
+![UNAUTHORIZED]('https://badgen.net/badge/UNAUTHORIZED/401/red')
 ```json
 {
     "action": "edit_news",
@@ -361,7 +361,7 @@
 }
 ```
 #### Edit News - Not the Publisher
-![FORBIDDEN](https://badgen.net/badge/FORBIDDEN/403/red)
+![FORBIDDEN]('https://badgen.net/badge/FORBIDDEN/403/red')
 ```json
 {
     "action": "edit_news",
@@ -370,7 +370,7 @@
 }
 ```
 #### Edit News - News ID Not Exist
-![NOT FOUND](https://badgen.net/badge/NOT FOUND/404/red)
+![NOT FOUND]('https://badgen.net/badge/NOT FOUND/404/red')
 ```json
 {
     "action": "edit_news",
@@ -379,7 +379,7 @@
 }
 ```
 #### Edit News - Bad Request (Incomplete, Main)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "edit_news",
@@ -388,7 +388,7 @@
 }
 ```
 #### Edit News - Bad Request (Incomplete, Files)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "edit_news",
@@ -397,7 +397,7 @@
 }
 ```
 #### Edit News - Bad Request (Wrong Type, Main)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "edit_news",
@@ -406,7 +406,7 @@
 }
 ```
 #### Edit News - Bad Request (Wrong Type, Files)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "edit_news",
@@ -415,7 +415,7 @@
 }
 ```
 #### Edit News - Bad Request (Unknown Parameters, Main)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "edit_news",
@@ -424,7 +424,7 @@
 }
 ```
 #### Edit News - Bad Request (Unknown Parameters, Files)
-![BAD REQUEST](https://badgen.net/badge/BAD REQUEST/400/red)
+![BAD REQUEST]('https://badgen.net/badge/BAD REQUEST/400/red')
 ```json
 {
     "action": "edit_news",
@@ -435,12 +435,12 @@
 
 <br>
 ## Request: Delete News
-![DELETE](https://badgen.net/badge/Method/DELETE/red)<span style="padding:10px">**/news/`<int:news_id>`**</span>
+![DELETE]('https://badgen.net/badge/Method/DELETE/red')<span style="padding:10px">**/news/`<int:news_id>`**</span>
 
 
 ### Responses:
 #### Delete News - Successful
-![OK](https://badgen.net/badge/OK/200/green)
+![OK]('https://badgen.net/badge/OK/200/green')
 ```json
 {
     "action": "delete_news",
@@ -449,7 +449,7 @@
 }
 ```
 #### Delete News - News ID Not Exist
-![NOT FOUND](https://badgen.net/badge/NOT FOUND/404/red)
+![NOT FOUND]('https://badgen.net/badge/NOT FOUND/404/red')
 ```json
 {
     "action": "delete_news",
@@ -458,7 +458,7 @@
 }
 ```
 #### Delete News - Not Logged In
-![UNAUTHORIZED](https://badgen.net/badge/UNAUTHORIZED/401/red)
+![UNAUTHORIZED]('https://badgen.net/badge/UNAUTHORIZED/401/red')
 ```json
 {
     "action": "post_new_news",
@@ -467,7 +467,7 @@
 }
 ```
 #### Delete News - Not the Publisher
-![FORBIDDEN](https://badgen.net/badge/FORBIDDEN/403/red)
+![FORBIDDEN]('https://badgen.net/badge/FORBIDDEN/403/red')
 ```json
 {
     "action": "delete_news",
@@ -481,12 +481,12 @@
 # File Service
 
 ## Request: Get File
-![GET](https://badgen.net/badge/Method/GET/green)<span style="padding:10px">**/file/`<int:news_id>`**</span>
+![GET]('https://badgen.net/badge/Method/GET/green')<span style="padding:10px">**/file/`<int:news_id>`**</span>
 
 
 ### Responses:
 #### Get File - Successful
-![OK](https://badgen.net/badge/OK/200/green)
+![OK]('https://badgen.net/badge/OK/200/green')
 ```json
 {
     "action": "get_files_from_news_id",
@@ -502,7 +502,7 @@
 }
 ```
 #### Get File - News ID Not Exist
-![NOT FOUND](https://badgen.net/badge/NOT FOUND/404/red)
+![NOT FOUND]('https://badgen.net/badge/NOT FOUND/404/red')
 ```json
 {
     "action": "get_files_from_news_id",

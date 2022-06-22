@@ -1,0 +1,2335 @@
+{
+	"info": {
+		"_postman_id": "528fc40a-96ef-444a-9869-ccd278d9d2f1",
+		"name": "Departement News Board",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21252350"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"username\",\r\n    \"password\" : \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/register",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"username\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/register",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "CREATED",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=40835ef5-fa92-47c4-b3e2-71671a4fb55e; Expires=Wed, 22 Jun 2022 16:32:16 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "142"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:32:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"register\",\n    \"action_status\": \"success\",\n    \"register_status\": \"success\",\n    \"username\": \"username\",\n    \"message\": \"Registration successful\"\n}"
+						},
+						{
+							"name": "Register - Already Registered",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"username\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/register",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=40835ef5-fa92-47c4-b3e2-71671a4fb55e; Expires=Wed, 22 Jun 2022 16:32:41 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "134"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:32:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"register\",\n    \"action_status\": \"success\",\n    \"register_status\": \"username_registered\",\n    \"message\": \"Username already registered\"\n}"
+						},
+						{
+							"name": "Register - Already Logged In",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"username\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/register",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=40835ef5-fa92-47c4-b3e2-71671a4fb55e; Expires=Wed, 22 Jun 2022 16:40:33 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "162"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:40:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"register\",\n    \"action_status\": \"success\",\n    \"register_status\": \"already_logged_in\",\n    \"message\": \"Already logged in, please logout first before registering\"\n}"
+						},
+						{
+							"name": "Register - Bad Request (Incomplete)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/register",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=40835ef5-fa92-47c4-b3e2-71671a4fb55e; Expires=Wed, 22 Jun 2022 16:33:12 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "123"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:33:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"register\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: missing '('username', <class 'str'>)' parameter\"\n}"
+						},
+						{
+							"name": "Register - Bad Request (Wrong Type)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : 122,\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/register",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=40835ef5-fa92-47c4-b3e2-71671a4fb55e; Expires=Wed, 22 Jun 2022 16:33:51 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:33:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"register\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: 'username' parameter is not of type '<class 'str'>'\"\n}"
+						},
+						{
+							"name": "Register - Bad Request (Non JSON)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "Any non-JSON data",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/register",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=40835ef5-fa92-47c4-b3e2-71671a4fb55e; Expires=Wed, 22 Jun 2022 16:42:33 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:42:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"register\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: invalid data\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"username\",\r\n    \"password\" : \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/login",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"username\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/login",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=40835ef5-fa92-47c4-b3e2-71671a4fb55e; Expires=Wed, 22 Jun 2022 16:40:25 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "129"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:40:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"login\",\n    \"action_status\": \"success\",\n    \"login_status\": \"success\",\n    \"username\": \"username\",\n    \"message\": \"Login successful\"\n}"
+						},
+						{
+							"name": "Login - Already Logged In",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"username\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/login",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=9b01b9a9-b400-42ec-bc2f-949edd6d77a1; Expires=Wed, 22 Jun 2022 16:48:57 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "160"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:48:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"login\",\n    \"action_status\": \"success\",\n    \"login_status\": \"already_logged_in\",\n    \"message\": \"Already logged in, please logout first before logging back in\"\n}"
+						},
+						{
+							"name": "Login - Username Not Exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"username1\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/login",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=d8b90935-f6eb-45a6-b7a6-9d0bbe9af5b6; Expires=Wed, 22 Jun 2022 16:49:34 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "123"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:49:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"login\",\n    \"action_status\": \"success\",\n    \"login_status\": \"username_not_exist\",\n    \"message\": \"Username does not exist\"\n}"
+						},
+						{
+							"name": "Login - Wrong Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"username\",\r\n    \"password\" : \"password1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/login",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=d8b90935-f6eb-45a6-b7a6-9d0bbe9af5b6; Expires=Wed, 22 Jun 2022 16:49:59 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "123"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:49:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"login\",\n    \"action_status\": \"success\",\n    \"login_status\": \"password_not_match\",\n    \"message\": \"Password does not match\"\n}"
+						},
+						{
+							"name": "Login - Bad Request (Incomplete)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"username\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/login",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=d8b90935-f6eb-45a6-b7a6-9d0bbe9af5b6; Expires=Wed, 22 Jun 2022 16:51:59 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "120"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:51:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"login\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: missing '('password', <class 'str'>)' parameter\"\n}"
+						},
+						{
+							"name": "Login - Bad Request (Wrong Type)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : 111,\r\n    \"password\" : \"password1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/login",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=d8b90935-f6eb-45a6-b7a6-9d0bbe9af5b6; Expires=Wed, 22 Jun 2022 16:52:58 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "124"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:52:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"login\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: 'username' parameter is not of type '<class 'str'>'\"\n}"
+						},
+						{
+							"name": "Login - Bad Request (Non JSON)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "Any non-JSON data",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/login",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=d8b90935-f6eb-45a6-b7a6-9d0bbe9af5b6; Expires=Wed, 22 Jun 2022 16:53:37 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:53:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"login\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: invalid data\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost/logout",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout - Successful",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost/logout",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=40835ef5-fa92-47c4-b3e2-71671a4fb55e; Expires=Wed, 22 Jun 2022 16:46:18 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:46:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"logout\",\n    \"action_status\": \"success\",\n    \"message\": \"Logged out successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "Get All News",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/news",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All News - Successful",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost/news",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=d8b90935-f6eb-45a6-b7a6-9d0bbe9af5b6; Expires=Wed, 22 Jun 2022 16:59:08 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "261"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:59:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"get_all_news\",\n    \"action_status\": \"success\",\n    \"message\": \"News fetched successfully\",\n    \"news\": [\n        {\n            \"id\": 1,\n            \"title\": \"News1 title\",\n            \"content\": \"News1 Content\",\n            \"datetime\": \"2011-05-20T15:04:03\",\n            \"publisher\": \"test_username_a\",\n            \"archived\": 0\n        }\n    ],\n    \"count\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Get News",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/news/:news_id",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"news",
+								":news_id"
+							],
+							"variable": [
+								{
+									"key": "news_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get News - Successful",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost/news/1",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=d8b90935-f6eb-45a6-b7a6-9d0bbe9af5b6; Expires=Wed, 22 Jun 2022 16:59:28 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "249"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:59:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"get_news_by_id\",\n    \"action_status\": \"success\",\n    \"message\": \"News fetched successfully\",\n    \"news\": {\n        \"id\": 1,\n        \"title\": \"News1 title\",\n        \"content\": \"News1 Content\",\n        \"datetime\": \"2011-05-20T15:04:03\",\n        \"publisher\": \"test_username_a\",\n        \"archived\": 0\n    }\n}"
+						},
+						{
+							"name": "Get News - News ID Not Exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost/news/2",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"2"
+									]
+								}
+							},
+							"status": "NOT FOUND",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=d8b90935-f6eb-45a6-b7a6-9d0bbe9af5b6; Expires=Wed, 22 Jun 2022 16:59:52 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "91"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 15:59:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"get_news_by_id\",\n    \"action_status\": \"error\",\n    \"message\": \"News id does not exist\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Post a New News",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"NewsTitle\",\r\n    \"content\" : \"NewsContent\",\r\n    \"datetime\" : \"2022-06-22T00:00:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\":\"file.gif\",\r\n            \"base64_data\":\"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/news/post",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"news",
+								"post"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post a New News - Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"NewsTitle\",\r\n    \"content\" : \"NewsContent\",\r\n    \"datetime\" : \"2022-06-22T00:00:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\" : \"file.gif\",\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/post",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"post"
+									]
+								}
+							},
+							"status": "CREATED",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=d8b90935-f6eb-45a6-b7a6-9d0bbe9af5b6; Expires=Wed, 22 Jun 2022 17:11:59 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "108"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:11:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"post_new_news\",\n    \"action_status\": \"success\",\n    \"message\": \"News posted successfully\",\n    \"news_id\": 4\n}"
+						},
+						{
+							"name": "Post a New News - Not Logged In",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"NewsTitle\",\r\n    \"content\" : \"NewsContent\",\r\n    \"datetime\" : \"2022-06-22T00:00:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\" : \"file.gif\",\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/post",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"post"
+									]
+								}
+							},
+							"status": "UNAUTHORIZED",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=2c63c5fd-fa67-49c2-81c5-32e6d35da43a; Expires=Wed, 22 Jun 2022 17:13:05 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:13:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"post_new_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Unauthorized: please login first\"\n}"
+						},
+						{
+							"name": "Post a New News - Bad Request (Incomplete, Main)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"NewsTitle\",\r\n    \"content\" : \"NewsContent\",\r\n    \"datetime\" : \"2022-06-22T00:00:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/post",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"post"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=2c63c5fd-fa67-49c2-81c5-32e6d35da43a; Expires=Wed, 22 Jun 2022 17:15:00 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "126"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:15:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"post_new_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: missing '('files', <class 'list'>)' parameter\"\n}"
+						},
+						{
+							"name": "Post a New News - Bad Request (Incomplete, Files)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"NewsTitle\",\r\n    \"content\" : \"NewsContent\",\r\n    \"datetime\" : \"2022-06-22T00:00:00\",\r\n    \"files\" : [\r\n        {\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/post",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"post"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=2c63c5fd-fa67-49c2-81c5-32e6d35da43a; Expires=Wed, 22 Jun 2022 17:15:32 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:15:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"post_new_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: missing '('file_name', <class 'str'>)' parameter at file index 0\"\n}"
+						},
+						{
+							"name": "Post a New News - Bad Request (Wrong Type, Main)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : 123,\r\n    \"content\" : \"NewsContent\",\r\n    \"datetime\" : \"2022-06-22T00:00:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\" : \"file.gif\",\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/post",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"post"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=2c63c5fd-fa67-49c2-81c5-32e6d35da43a; Expires=Wed, 22 Jun 2022 17:16:10 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "129"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:16:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"post_new_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: 'title' parameter is not of type '<class 'str'>'\"\n}"
+						},
+						{
+							"name": "Post a New News - Bad Request (Wrong Type, Files)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"NewsTitle\",\r\n    \"content\" : \"NewsContent\",\r\n    \"datetime\" : \"2022-06-22T00:00:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\" : 123,\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/post",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"post"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=2c63c5fd-fa67-49c2-81c5-32e6d35da43a; Expires=Wed, 22 Jun 2022 17:16:38 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "149"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:16:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"post_new_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: 'file_name' parameter is not of type '<class 'str'>' at file index 0\"\n}"
+						},
+						{
+							"name": "Post a New News - Bad Request (Non JSON)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "Any non-JSON data",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/post",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"post"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=2c63c5fd-fa67-49c2-81c5-32e6d35da43a; Expires=Wed, 22 Jun 2022 17:14:10 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "93"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:14:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"post_new_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: invalid data\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit News",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"NewsTitleEdited\",\r\n    \"content\" : \"NewsContentEdited\",\r\n    \"datetime\" : \"2022-06-22T06:09:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\" : \"fileEdited.gif\",\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/news/:news_id",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"news",
+								":news_id"
+							],
+							"variable": [
+								{
+									"key": "news_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit News - Successful (All)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"NewsTitleEdited\",\r\n    \"content\" : \"NewsContentEdited\",\r\n    \"datetime\" : \"2022-06-22T06:09:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\" : \"fileEdited.gif\",\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/3",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=2c63c5fd-fa67-49c2-81c5-32e6d35da43a; Expires=Wed, 22 Jun 2022 17:25:52 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:25:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"edit_news\",\n    \"action_status\": \"success\",\n    \"message\": \"News edited successfully\"\n}"
+						},
+						{
+							"name": "Edit News - Successful (Partial)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"NewsTitleEdited\",\r\n    \"datetime\" : \"2022-06-22T06:09:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/3",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=2c63c5fd-fa67-49c2-81c5-32e6d35da43a; Expires=Wed, 22 Jun 2022 17:28:17 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:28:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"edit_news\",\n    \"action_status\": \"success\",\n    \"message\": \"News edited successfully\"\n}"
+						},
+						{
+							"name": "Edit News - Not Logged In",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"NewsTitleEdited\",\r\n    \"content\" : \"NewsContentEdited\",\r\n    \"datetime\" : \"2022-06-22T06:09:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\" : \"fileEdited.gif\",\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/3",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"3"
+									]
+								}
+							},
+							"status": "UNAUTHORIZED",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=8c3079d0-3055-49ff-8b59-380e698e3d91; Expires=Wed, 22 Jun 2022 17:29:27 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "96"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:29:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"edit_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Unauthorized: please login first\"\n}"
+						},
+						{
+							"name": "Edit News - Not the Publisher",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"NewsTitleEdited\",\r\n    \"content\" : \"NewsContentEdited\",\r\n    \"datetime\" : \"2022-06-22T06:09:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\" : \"fileEdited.gif\",\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/3",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"3"
+									]
+								}
+							},
+							"status": "FORBIDDEN",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=8c3079d0-3055-49ff-8b59-380e698e3d91; Expires=Wed, 22 Jun 2022 17:33:30 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "113"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:33:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"edit_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Forbidden: you are not the publisher of this news\"\n}"
+						},
+						{
+							"name": "Edit News - News ID Not Exist",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"NewsTitleEdited\",\r\n    \"content\" : \"NewsContentEdited\",\r\n    \"datetime\" : \"2022-06-22T06:09:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\" : \"fileEdited.gif\",\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/10",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"10"
+									]
+								}
+							},
+							"status": "NOT FOUND",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=8c3079d0-3055-49ff-8b59-380e698e3d91; Expires=Wed, 22 Jun 2022 17:55:45 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:55:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"edit_news\",\n    \"action_status\": \"error\",\n    \"message\": \"News id does not exist\"\n}"
+						},
+						{
+							"name": "Edit News - Bad Request (Incomplete, Main)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : 213123,\r\n    \"content\" : \"NewsContentEdited\",\r\n    \"datetime\" : \"2022-06-22T06:09:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\" : \"fileEdited.gif\",\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/3",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"3"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=8c3079d0-3055-49ff-8b59-380e698e3d91; Expires=Wed, 22 Jun 2022 17:37:11 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "125"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:37:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"edit_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: 'title' parameter is not of type '<class 'str'>'\"\n}"
+						},
+						{
+							"name": "Edit News - Bad Request (Incomplete, Files)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"NewsTitleEdited\",\r\n    \"content\" : \"NewsContentEdited\",\r\n    \"datetime\" : \"2022-06-22T06:09:00\",\r\n    \"files\" : [\r\n        {\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/3",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"3"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=8c3079d0-3055-49ff-8b59-380e698e3d91; Expires=Wed, 22 Jun 2022 17:44:17 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "141"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:44:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"edit_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: missing '('file_name', <class 'str'>)' parameter at file index 0\"\n}"
+						},
+						{
+							"name": "Edit News - Bad Request (Wrong Type, Main)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : 134,\r\n    \"content\" : \"NewsContentEdited\",\r\n    \"datetime\" : \"2022-06-22T06:09:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\" : \"fileEdited.gif\",\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/3",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"3"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=8c3079d0-3055-49ff-8b59-380e698e3d91; Expires=Wed, 22 Jun 2022 17:47:13 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "125"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:47:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"edit_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: 'title' parameter is not of type '<class 'str'>'\"\n}"
+						},
+						{
+							"name": "Edit News - Bad Request (Wrong Type, Files)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"NewsTitleEdited\",\r\n    \"content\" : \"NewsContentEdited\",\r\n    \"datetime\" : \"2022-06-22T06:09:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\" : 123,\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/3",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"3"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=8c3079d0-3055-49ff-8b59-380e698e3d91; Expires=Wed, 22 Jun 2022 17:51:27 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:51:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"edit_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: 'file_name' parameter is not of type '<class 'str'>' at file index 0\"\n}"
+						},
+						{
+							"name": "Edit News - Bad Request (Unknown Parameters, Main)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"NewsTitleEdited\",\r\n    \"content\" : \"NewsContentEdited\",\r\n    \"datetime\" : \"2022-06-22T06:09:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\" : \"fileEdited.gif\",\r\n            \"base64_data\" : \"<base64encodedbytes>\"\r\n        }\r\n    ],\r\n    \"why\" : \"nope\",\r\n    \"unknown\" : \"ye\",\r\n    \"yep\" : \"yep\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/3",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"3"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=8c3079d0-3055-49ff-8b59-380e698e3d91; Expires=Wed, 22 Jun 2022 17:40:24 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:40:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"edit_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: unknown parameters: yep, why, unknown\"\n}"
+						},
+						{
+							"name": "Edit News - Bad Request (Unknown Parameters, Files)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"NewsTitleEdited\",\r\n    \"content\" : \"NewsContentEdited\",\r\n    \"datetime\" : \"2022-06-22T06:09:00\",\r\n    \"files\" : [\r\n        {\r\n            \"file_name\" : \"fileEdited.gif\",\r\n            \"base64_data\" : \"<base64encodedbytes>\",\r\n            \"why\" : \"nope\",\r\n            \"unknown\" : \"ye\",\r\n            \"yep\" : \"yep\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/news/3",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"3"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=8c3079d0-3055-49ff-8b59-380e698e3d91; Expires=Wed, 22 Jun 2022 17:43:24 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "130"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 16:43:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"edit_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Bad request: unknown parameters: unknown, yep, why at file index 0\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete News",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost/news/:news_id",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"news",
+								":news_id"
+							],
+							"variable": [
+								{
+									"key": "news_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete News - Successful",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost/news/4",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=d6d30e9e-e2a1-41a3-82f1-8073beeca901; Expires=Wed, 22 Jun 2022 18:23:08 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "93"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 17:23:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"delete_news\",\n    \"action_status\": \"success\",\n    \"message\": \"News deleted successfully\"\n}"
+						},
+						{
+							"name": "Delete News - News ID Not Exist",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost/news/4",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"4"
+									]
+								}
+							},
+							"status": "NOT FOUND",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=d6d30e9e-e2a1-41a3-82f1-8073beeca901; Expires=Wed, 22 Jun 2022 18:23:26 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 17:23:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"delete_news\",\n    \"action_status\": \"error\",\n    \"message\": \"News id does not exist\"\n}"
+						},
+						{
+							"name": "Delete News - Not Logged In",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost/news/4",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"4"
+									]
+								}
+							},
+							"status": "UNAUTHORIZED",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=b3360a38-0813-40fa-b6e5-ff87dba02446; Expires=Wed, 22 Jun 2022 18:23:59 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 17:23:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"post_new_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Unauthorized: please login first\"\n}"
+						},
+						{
+							"name": "Delete News - Not the Publisher",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost/news/5",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"news",
+										"5"
+									]
+								}
+							},
+							"status": "FORBIDDEN",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=b3360a38-0813-40fa-b6e5-ff87dba02446; Expires=Wed, 22 Jun 2022 18:24:42 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 17:24:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"delete_news\",\n    \"action_status\": \"error\",\n    \"message\": \"Forbidden: you are not the publisher of this news\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "File",
+			"item": [
+				{
+					"name": "Get File",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/file/:news_id",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"file",
+								":news_id"
+							],
+							"variable": [
+								{
+									"key": "news_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get File - Successful",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost/file/5",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"file",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=9ab6ddc4-ba45-4aa7-8335-e47ccb4aac23; Expires=Wed, 22 Jun 2022 18:49:50 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "194"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 17:49:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"get_files_from_news_id\",\n    \"action_status\": \"success\",\n    \"message\": \"Files fetched successfully\",\n    \"files\": [\n        {\n            \"file_name\": \"file.gif\",\n            \"base64_data\": \"<base64encodedbytes>\"\n        }\n    ],\n    \"count\": 1\n}"
+						},
+						{
+							"name": "Get File - News ID Not Exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost/file/1",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"file",
+										"1"
+									]
+								}
+							},
+							"status": "NOT FOUND",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "SESS_ID=9ab6ddc4-ba45-4aa7-8335-e47ccb4aac23; Expires=Wed, 22 Jun 2022 18:52:35 GMT; Max-Age=3600; Path=/"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jun 2022 17:52:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"action\": \"get_files_from_news_id\",\n    \"action_status\": \"error\",\n    \"message\": \"News id does not exist\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

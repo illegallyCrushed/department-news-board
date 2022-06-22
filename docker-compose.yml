@@ -39,7 +39,6 @@ services:
     restart: always
     environment:
       - RABBIT_HOST=rabbitmq
-      - DB_HOST=mysql
       - REDIS_HOST=redis
 
   file:

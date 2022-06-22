@@ -3,6 +3,7 @@ import uuid
 import redis
 from nameko.extensions import DependencyProvider
 from werkzeug import Response
+import os
 
 
 class SessionWrapper:
@@ -35,7 +36,7 @@ class SessionWrapper:
 
 class SessionProvider(DependencyProvider):
     def __init__(self):
-        self.client = redis.Redis(host="127.0.0.1", port=6379, db=0)
+        self.client = redis.Redis(host=os.environ.get('REDIS_HOST', 'localhost'), port=os.environ.get('REDIS_PORT', 6379), db=0)
 
     def get_dependency(self, worker_ctx):
         return SessionWrapper(self.client)
@@ -102,5 +103,5 @@ def session_start(fn):
     def wrapper(*args, **kwargs):
         response = Response()
         session = Session(args[0].session_provider, args[1].cookies.get("SESS_ID"), response)
-        return fn(*args, session, response)
+        return fn(args[0], args[1], session, response, **kwargs)
     return wrapper

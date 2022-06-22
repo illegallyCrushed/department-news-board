@@ -35,7 +35,10 @@ class DatabaseWrapper:
         sql = f"""INSERT INTO news (title, content, datetime, publisher) VALUES ('{title}', '{content}', '{datetime}', '{publisher}')"""
         cursor.execute(sql)
         self.connection.commit()
+        last_id = cursor.lastrowid
         cursor.close()
+        return last_id
+        
 
     def update_news(self, news_id, title, content, datetime):
         cursor = self.connection.cursor(dictionary=True)

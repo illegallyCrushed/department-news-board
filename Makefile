@@ -5,3 +5,4 @@ build-base:
 
 build: build-base
 	for service in $(SERVICES); do make -C ./services/$$service build-image; done
+	make -C ./sql build-image

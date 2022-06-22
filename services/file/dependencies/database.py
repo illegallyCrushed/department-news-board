@@ -32,7 +32,7 @@ class DatabaseWrapper:
         sql = f"DELETE FROM files WHERE news_id = {news_id}"
         cursor.execute(sql)
         self.connection.commit()
-        cursor.close()        
+        cursor.close()
 
 
 class DatabaseProvider(DependencyProvider):
@@ -47,7 +47,7 @@ class DatabaseProvider(DependencyProvider):
                 pool_reset_session=True,
                 host=os.environ.get('DB_HOST', 'localhost'),
                 port=os.environ.get('DB_PORT', 3306),
-                database=os.environ.get('DB_NAME', 'news'),
+                database=os.environ.get('DB_NAME'),
                 user=os.environ.get('DB_USER', 'root'),
                 password=os.environ.get('DB_PASS', '')
             )

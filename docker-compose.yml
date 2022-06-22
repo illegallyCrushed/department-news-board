@@ -10,11 +10,27 @@ services:
   mysql:
     container_name: news-board-mysql
     image: mysql:5.7
+    command: --init-file /data/application/init.sql
+    volumes:
+        - ./sql/init.sql:/data/application/init.sql
     restart: always
     ports:
       - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=root
+
+  mysql-cron:
+    container_name: news-board-mysql-cron
+    image: news-board-mysql-cron
+    restart: always
+    depends_on:
+      - mysql
+    volumes:
+      - ./sql/backups:/backups
+    environment:
+      - DB_HOST=mysql
+      - DB_PASS=root
+      - DB_NAME=dpt_news_board
 
   redis:
     container_name: news-board-redis
@@ -26,8 +42,6 @@ services:
   gateway:
     container_name: news-board-service-gateway
     image: news-board-gateway
-    volumes:
-      - ./services/gateway:/app
     depends_on:
       - rabbitmq
       - redis
@@ -46,7 +60,6 @@ services:
     image: news-board-file
     volumes:
       - ./files:/files
-      - ./services/file:/app
     depends_on:
       - rabbitmq
       - mysql
@@ -60,8 +73,6 @@ services:
   news:
     container_name: news-board-service-news
     image: news-board-news
-    volumes:
-      - ./services/news:/app
     depends_on:
       - rabbitmq
       - mysql
@@ -75,8 +86,6 @@ services:
   user:
     container_name: news-board-service-user
     image: news-board-user
-    volumes:
-      - ./services/user:/app
     depends_on:
       - rabbitmq
       - mysql

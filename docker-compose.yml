@@ -30,8 +30,10 @@ services:
       - ./services/gateway:/app
     depends_on:
       - rabbitmq
-      - mysql
       - redis
+      - file
+      - user
+      - news
     ports:
       - "80:8000"
     restart: always
@@ -53,6 +55,8 @@ services:
     environment:
       - RABBIT_HOST=rabbitmq
       - DB_HOST=mysql
+      - DB_PASS=root
+      - DB_NAME=dpt_news_board
 
   news:
     container_name: news-board-service-news
@@ -66,12 +70,14 @@ services:
     environment:
       - RABBIT_HOST=rabbitmq
       - DB_HOST=mysql
+      - DB_PASS=root
+      - DB_NAME=dpt_news_board
 
   user:
     container_name: news-board-service-user
     image: news-board-user
     volumes:
-      - ./services/news:/app
+      - ./services/user:/app
     depends_on:
       - rabbitmq
       - mysql
@@ -79,3 +85,5 @@ services:
     environment:
       - RABBIT_HOST=rabbitmq
       - DB_HOST=mysql
+      - DB_PASS=root
+      - DB_NAME=dpt_news_board

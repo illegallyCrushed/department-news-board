@@ -1,4 +1,4 @@
-SERVICES := gateway file news
+SERVICES := gateway file news user
 
 build-base:
 	docker build -t news-board-base .

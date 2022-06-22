@@ -15,6 +15,7 @@ docker-compose up
 ### Cron jobs
 - Archiving news that one month old everyday
 - Backing up sql everyday
+
 cron-backup
 ```bash
 0 0 * * * python3 /cron_script.py > /backups/log.txt

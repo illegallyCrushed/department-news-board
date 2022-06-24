@@ -17,7 +17,7 @@ class DatabaseWrapper:
         sql = f"""SELECT * FROM files WHERE news_id = {news_id}"""
         cursor.execute(sql)
         result = cursor.fetchall()
-        self.connection.close()
+        cursor.close()
         return result
 
     def add_new_file(self, news_id, file_name, file_path):
@@ -25,14 +25,14 @@ class DatabaseWrapper:
         sql = f"""INSERT INTO files (news_id, filename, filepath) VALUES ({news_id}, '{file_name}', '{file_path}')"""
         cursor.execute(sql)
         self.connection.commit()
-        self.connection.close()
+        cursor.close()
 
     def delete_all_files_from_news_id(self, news_id):
         cursor = self.connection.cursor(dictionary=True)
         sql = f"DELETE FROM files WHERE news_id = {news_id}"
         cursor.execute(sql)
         self.connection.commit()
-        self.connection.close()
+        cursor.close()
 
 
 class DatabaseProvider(DependencyProvider):

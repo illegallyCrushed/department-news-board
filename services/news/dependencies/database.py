@@ -18,7 +18,7 @@ class DatabaseWrapper:
         sql = f"""SELECT * FROM news WHERE archived = 0"""
         cursor.execute(sql)
         result = cursor.fetchall()
-        self.connection.close()
+        cursor.close()
         return result
 
     def get_news_by_id(self, news_id):
@@ -27,7 +27,7 @@ class DatabaseWrapper:
         sql = f"""SELECT * FROM news WHERE id = {news_id}"""
         cursor.execute(sql)
         result = cursor.fetchall()
-        self.connection.close()
+        cursor.close()
         return result
 
     def add_new_news(self, title, content, datetime, publisher):
@@ -36,7 +36,7 @@ class DatabaseWrapper:
         cursor.execute(sql)
         self.connection.commit()
         last_id = cursor.lastrowid
-        self.connection.close()
+        cursor.close()
         return last_id
         
 
@@ -53,14 +53,14 @@ class DatabaseWrapper:
         sql = f"""UPDATE news SET {",".join(editable_fields)} WHERE id = {news_id}"""
         cursor.execute(sql)
         self.connection.commit()
-        self.connection.close()
+        cursor.close()
 
     def delete_news(self, news_id):
         cursor = self.connection.cursor(dictionary=True)
         sql = f"DELETE FROM news WHERE id = {news_id}"
         cursor.execute(sql)
         self.connection.commit()
-        self.connection.close()
+        cursor.close()
 
 
 class DatabaseProvider(DependencyProvider):
